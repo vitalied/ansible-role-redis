@@ -1,2 +1,5 @@
 ---
 # handlers file for vitalied.redis
+
+- name: restart redis
+  service: name=redis-server state=restarted
