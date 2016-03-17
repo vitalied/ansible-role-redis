@@ -1,0 +1,20 @@
+---
+
+galaxy_info:
+  author: vitalied
+  description: Ansible Role for Redis Management.
+  license: MIT
+  min_ansible_version: 2.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - wily
+        - vivid
+        - utopic
+        - trusty
+  galaxy_tags:
+    - database
+    - nosql
+    - cache
+dependencies: []
