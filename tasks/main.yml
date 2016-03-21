@@ -1,2 +1,25 @@
 ---
 # tasks file for vitalied.redis
+
+- name: apt-get install
+  apt:
+    name=redis-server
+    state=latest
+  notify: restart redis
+  tags: vitalied.redis
+
+- name: create redis data directory
+  file:
+    path={{ redis_data_dir }}
+    state=directory
+    owner=redis
+    group=redis
+    mode=0755
+  notify: restart redis
+
+- name: copy templates
+  template:
+    src=etc/redis/redis.conf.j2
+    dest=/etc/redis/redis.conf
+  notify: restart redis
+  tags: vitalied.redis
